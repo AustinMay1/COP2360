@@ -16,10 +16,11 @@ namespace Exam_4
             string input;
             float priceNo, subtotal = 0;
 
+            Console.WriteLine("Enter 0 to stop shopping");
 
             while (true)
             {
-                Console.Write("Item name(enter 0 to stop): ");
+                Console.Write("Item name: ");
                 input = Console.ReadLine();
 
                 Match match = Regex.Match(input, regex1, RegexOptions.IgnoreCase);
@@ -72,7 +73,7 @@ namespace Exam_4
                 int.TryParse(input, out number);
                 quantity[count] = number;
                 subtotal += price[count] * quantity[count];
-                Console.Write("Item name(enter 0 to stop): ");
+                Console.Write("Item name: ");
                 input = Console.ReadLine();
 
             } while (!input.Equals("0"));
@@ -88,6 +89,8 @@ namespace Exam_4
             Console.WriteLine();
             Console.WriteLine("Receipt v4");        
             Console.WriteLine("====================================");
+
+            Console.WriteLine("{0} items", count + 1);
                     
             Console.WriteLine("Subtotal: $" + subtotal);
                     
